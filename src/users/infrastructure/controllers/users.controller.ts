@@ -1,13 +1,13 @@
 import { AuthGuard } from '@auth/infrastructure/guard/auth.guard';
 import {
-  Controller,
-  Get,
-  Post,
-  Put,
-  Delete,
   Body,
+  Controller,
+  Delete,
+  Get,
   Param,
   ParseIntPipe,
+  Post,
+  Put,
   UseGuards,
 } from '@nestjs/common';
 import { CreateUserDto } from '@users/application/dto/create-user.dto';
