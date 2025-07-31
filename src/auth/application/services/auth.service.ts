@@ -1,13 +1,13 @@
+import { AuthServiceInterface } from '@auth/domain/interfaces/auth-service.interface';
+import { AuthCredentials } from '@auth/domain/interfaces/types/auth-credentials';
 import {
   ConflictException,
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { UsersService } from '@users/application/services/users.service';
 import * as bcrypt from 'bcryptjs';
-import { AuthServiceInterface } from 'src/auth/domain/interfaces/auth-service.interface';
-import { AuthCredentials } from 'src/auth/domain/interfaces/types/auth-credentials';
-import { UsersService } from 'src/users/application/services/users.service';
 
 @Injectable()
 export class AuthService implements AuthServiceInterface {

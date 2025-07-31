@@ -1,3 +1,4 @@
+import { AuthGuard } from '@auth/infrastructure/guard/auth.guard';
 import {
   Controller,
   Get,
@@ -9,10 +10,9 @@ import {
   ParseIntPipe,
   UseGuards,
 } from '@nestjs/common';
-import { AuthGuard } from 'src/auth/infrastructure/guard/auth.guard';
-import { UsersService } from '../../application/services/users.service';
-import { CreateUserDto } from 'src/users/application/dto/create-user.dto';
-import { UpdateUserDto } from 'src/users/application/dto/udpate-user.dto';
+import { CreateUserDto } from '@users/application/dto/create-user.dto';
+import { UpdateUserDto } from '@users/application/dto/udpate-user.dto';
+import { UsersService } from '@users/application/services/users.service';
 
 @Controller('users')
 export class UsersController {

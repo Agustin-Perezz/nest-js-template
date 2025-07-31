@@ -1,6 +1,6 @@
 import { User } from '@prisma/client';
-import { CreateUserDto } from 'src/users/application/dto/create-user.dto';
-import { UpdateUserDto } from 'src/users/application/dto/udpate-user.dto';
+import { CreateUserDto } from '@users/application/dto/create-user.dto';
+import { UpdateUserDto } from '@users/application/dto/udpate-user.dto';
 
 export interface IUserRepository {
   findAll(): Promise<User[]>;
