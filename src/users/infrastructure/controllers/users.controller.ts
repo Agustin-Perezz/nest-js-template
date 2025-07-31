@@ -9,8 +9,10 @@ import {
   ParseIntPipe,
   UseGuards,
 } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { AuthGuard } from 'src/auth/infrastructure/guard/auth.guard';
+import { UsersService } from '../../application/services/users.service';
+import { CreateUserDto } from 'src/users/application/dto/create-user.dto';
+import { UpdateUserDto } from 'src/users/application/dto/udpate-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -28,16 +30,13 @@ export class UsersController {
   }
 
   @Post()
-  create(@Body() data: { email: string; name?: string; password: string }) {
-    return this.usersService.create(data);
+  create(@Body() user: CreateUserDto) {
+    return this.usersService.create(user);
   }
 
   @Put(':id')
-  update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() data: { email?: string; name?: string },
-  ) {
-    return this.usersService.update(id, data);
+  update(@Param('id', ParseIntPipe) id: number, @Body() user: UpdateUserDto) {
+    return this.usersService.update(id, user);
   }
 
   @Delete(':id')
