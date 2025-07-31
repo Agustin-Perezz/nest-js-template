@@ -5,8 +5,9 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { jwtConstants } from '../constanst/jwt-constants';
 import { Request } from 'express';
+
+import { jwtConstants } from '../constanst/jwt-constants';
 
 interface JwtPayload {
   email: string;
